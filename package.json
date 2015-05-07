@@ -1,0 +1,27 @@
+{
+    "name": "graphomic",
+    "version": "0.1.0",
+    "description": "Graphomic = graph + atomic, simple and fast graph library for node.js.",
+    "author": "Rafał Wysocki <rafal.wysocki@gmail.com>",
+    "main": "app.js",
+    "license": "MIT", 
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rafalwysocki/graphomic"
+    },
+    "keywords": ["graph"],
+    "dependencies": {
+        "config": "^1.11.0",
+        "node-uuid": "^1.4.1"
+    },
+    "devDependencies": {
+        "async": "^0.9.0",
+        "bluebird": "^2.9.14",
+        "mocha": "^2.0.1",
+        "should": "^4.3.0"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha -r should ./test/*.js"
+    },
+    "private": false
+}
