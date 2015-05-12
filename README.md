@@ -40,8 +40,8 @@ Library allows to store mixed graphs (with directed or undirected edges, or both
 ```
     
 - Node object should be never created by application, only by classes implementing Storage itself.
-- Every method on `Graph` and `Node` objects are asynchronous, except `Node#getData`.
-- `Node#getData` is synchronous because when node is created, or fetched from the store, we already should have data in it. For example lets say that you have MySQLStore that keeps every node as one row in the table, when you get node, this operation is asynchronous (ex. `Graph#findFirst`), but data for this node should be already present in the Node object, because it is in the same row, so there is no point for `Node#getData` to be asynchronous.
+- Every method on `Graph` and `Node` objects is asynchronous, except `Node#getData`.
+- `Node#getData` is synchronous because when node is created, or fetched from the store, we already should have data in it. For example lets say that you have MySQL store that keeps every node as one row in the table, when you get node, this operation is asynchronous (ex. `Graph#findFirst`), but data for this node should be already present in the Node object, because it is in the same row, so there is no point for `Node#getData` to be asynchronous.
 - `Graph` class contains only basic manipulation methods (add/remove/connect/disconnect) and basic query methods (find, neighbors, traverse* etc.). The idea is to keep this class reasonably small and flexible. Client application should implement specific functions (finding shortest path, or finding set of connected nodes meeting some data criteria etc.) using `Graph` methods.
 - API is asynchronous but doesn't use any helper library (`async`, `when.js` etc.) it's writen using standard node.js callback functions. This way user can choose the most convinent, for him, way to use this library (raw callback, promises, async module). It's strongly recomended to use some kind of helper module (`async`, `when.js` etc.) when using this library, to avoid 'callback hell' if your application is not trivial. You can find example usage of `async` and `bluebird` modules in unittests.
 
@@ -189,7 +189,7 @@ Tells if nodes with given ids are connected by edge.
 ##### `.neighbors(node, excludeId,, callback)`
 
 Returns list of all neighbors for given node.
-`excludeId` - node id which should be excluded in resulted list, if `null` doesn't exclude anything. Convinet when implementing some algohritms.
+`excludeId` - node id which should be excluded in resulted list, if `null` doesn't exclude anything. Convenient when implementing some algorithms.
 
 ## Node
 
