@@ -54,7 +54,7 @@ describe('Algorithm of finding the shortes path', function () {
                     done();
                 }.bind(this));
             }.bind(this)
-        )
+        );
     });
     it("should find shortest path", function (done) {        
         // result of the algorithm
@@ -72,7 +72,7 @@ describe('Algorithm of finding the shortes path', function () {
                         return {cost:0, nodes:[node]};
                     };
                 }
-                return start 
+                return start;
             },
             null,
             function (node, depth, parentNode) {

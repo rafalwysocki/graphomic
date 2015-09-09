@@ -72,7 +72,7 @@ describe("Travese big graph", function () {
             ).then(function () {
                 Object.keys(visited).should.have.length(1002);
                 done();
-            });;
+            });
         }).catch(function (err) {
             done(err);
         });

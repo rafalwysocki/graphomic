@@ -65,9 +65,9 @@ describe('Building directed graph from adjaceny list', function () {
             var n = nodes[0];
             return graph.neighborsAsync(n.id).then(function (neighbors) {
                 neighbors.should.have.length(3);
-                neighbors.some(function (node) {return node.getData() === 10}).should.be.true;
-                neighbors.some(function (node) {return node.getData() === 20}).should.be.true;
-                neighbors.some(function (node) {return node.getData() === 25}).should.be.true;
+                neighbors.some(function (node) {return node.getData() === 10;}).should.be.true;
+                neighbors.some(function (node) {return node.getData() === 20;}).should.be.true;
+                neighbors.some(function (node) {return node.getData() === 25;}).should.be.true;
             });
         }).then(function () {
            return  graph.findAsync(function (node) {
@@ -100,7 +100,7 @@ describe('Building directed graph from adjaceny list', function () {
                 return graph.neighborsAsync(n.id).then(function (neighbors) {
                     neighbors.should.have.length(0);
                 });
-            })
+            });
         }).then(function () {
             return graph.findAsync(function (node) {
                 return node.getData() === 20;
