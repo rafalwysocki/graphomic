@@ -186,7 +186,7 @@ Remove all edges from the store.
 
 Tells if nodes with given ids are connected by edge.
 
-##### `.neighbors(node, excludeId,, callback)`
+##### `.neighbors(node, excludeId, callback)`
 
 Returns list of all neighbors for given node.
 `excludeId` - node id which should be excluded in resulted list, if `null` doesn't exclude anything. Convenient when implementing some algorithms.
